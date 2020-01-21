@@ -1,0 +1,87 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+{{- template "standard_deployment_metadata" . }}
+spec:
+  replicas: {{ .Values.deployment.replicaCount }}
+  template:
+    {{- template "standard_deployment_template_metadata" . }}
+    {{- with .Values.deployment }}
+    spec:
+      volumes:
+        - name: spi-config
+          configMap:
+            name: {{ .spi{{API_NAME}}{{CORE}}Config }}
+        {{- if .volumes }}
+{{ toYaml .volumes | indent 8 }}
+        {{- end }}
+      containers:
+        - name: {{ $.Chart.Name }}
+          image: "{{ .image.name }}:{{ .image.tag }}"
+          imagePullPolicy: {{ .image.pullPolicy }}
+          ports:
+            - containerPort: 8080
+            {{ if .ssl.enabled -}}
+            # for the ssl port
+            - containerPort: 8443
+            {{- end }}
+            {{ if .jolokia.enabled -}}
+            # for the jolokia port
+            - name: jolokia
+              containerPort: 8778
+            {{- end }}
+          {{ if .probe.enabled -}}
+          livenessProbe:
+            httpGet:
+              path: {{ .probe.path }}
+              port: 8080
+            initialDelaySeconds: {{ .probe.liveness.initialDelaySeconds }}
+            timeoutSeconds: {{ .probe.timeoutSeconds }}
+            periodSeconds: {{ .probe.liveness.periodSeconds }}
+            successThreshold: 1
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: {{ .probe.path }}
+              port: 8080
+            initialDelaySeconds: {{ .probe.readiness.initialDelaySeconds }}
+            timeoutSeconds: {{ .probe.timeoutSeconds }}
+            periodSeconds: {{ .probe.readiness.periodSeconds }}
+            successThreshold: 1
+            failureThreshold: 10
+          {{ end -}}
+          resources:
+          {{- if or (.resources.limits.cpu) (.resources.limits.memory) }}
+            limits: 
+          {{- if .resources.limits.cpu }}
+              cpu: {{ .resources.limits.cpu }}
+          {{- end -}}
+          {{- if .resources.limits.memory }}
+              memory: {{ .resources.limits.memory }}
+          {{- end -}}
+          {{- end }}
+          {{- if or (.resources.requests.cpu) (.resources.requests.memory) }}
+            requests:
+          {{- if .resources.requests.cpu }}
+              cpu: {{ .resources.requests.cpu }}
+          {{- end -}}
+          {{- if .resources.requests.memory }}
+              memory: {{ .resources.requests.memory }}
+          {{- end -}}
+          {{- end }}
+{{ toYaml .resources | indent 12 }}
+          volumeMounts:
+            - name: spi-config
+              mountPath: /usr/local/config/spi
+          {{- if .volumeMounts }}
+{{ toYaml .volumeMounts | indent 10 }}
+          {{- end }}
+          env:
+          - name: SERVER_PORT
+            value: "8080"
+          {{- if .javaOpts }}
+          - name: JAVA_OPTIONS
+            value: {{ .javaOpts }}
+          {{- end }}
+          - name: SPRING_CONFIG_LOCATION
+            value:  'file:/usr/local/config/spi/application.yml'
+          {{- end }}

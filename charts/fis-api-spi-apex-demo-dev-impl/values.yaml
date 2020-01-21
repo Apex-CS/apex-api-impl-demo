@@ -1,0 +1,18 @@
+fis-api-spi-{{API_NAME}}-{{CORE}}:
+  deployment:
+    replicaCount: 1
+    image:
+      name: docker.fnis.com/epo/fis/api/spi-{{API_NAME}}-{{CORE}}
+      tag: 
+      pullPolicy: Always
+    spi{{API_NAME}}{{CORE}}Config: 'fis-api-spi-{{API_NAME}}-{{CORE}}-config'
+    resources:
+      limits:
+        cpu: 500m
+        memory: 512Mi
+      requests:
+        cpu: 100m
+        memory: 256Mi
+  routes:
+    default:
+      subdomain: sdlocpapp.fisdev.local

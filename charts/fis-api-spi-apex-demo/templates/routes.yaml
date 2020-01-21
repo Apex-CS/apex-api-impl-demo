@@ -1,0 +1,37 @@
+{{- $appFullName := include "app.fullname" . -}}
+{{- $appName := include "app.name" . -}}
+{{- $labels := include "standard_labels" . }}
+{{- with .Values.routes }}
+{{- range $routeName, $value := .items }}
+{{- if .enabled }}
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: "{{ $appFullName }}-{{ $routeName }}"
+  {{- $labels }}
+spec:
+  {{- if .host }}
+  host: {{ .host }}
+  {{- else if .qualifier }}
+  host: "{{ $appName }}-{{ .qualifier }}-{{ $.Release.Namespace }}.{{ .subdomain | default $.Values.routes.default.subdomain }}"
+  {{- else }}
+  host: "{{ $appName }}-{{ $.Release.Namespace }}.{{ .subdomain | default $.Values.routes.default.subdomain }}"
+  {{- end }}
+  to:
+    kind: Service
+    name: {{ $.Values.service.name }}
+  port:
+    targetPort: {{ .targetPort | default $.Values.routes.default.targetPort }}
+  {{- if .tlsEnabled }}
+    {{- if .tls }}
+  tls: 
+{{ toYaml .tls | indent 4 }}
+    {{- else }}
+  tls:
+{{ toYaml $.Values.routes.default.tls | indent 4 }}
+    {{- end }}
+  {{- end }}
+---
+{{- end }}
+{{- end }}
+{{- end }}

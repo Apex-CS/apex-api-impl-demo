@@ -1,0 +1,58 @@
+deployment:
+  replicaCount: 1
+  image:
+    name: docker.fnis.com/epo/fis/api/spi-{{API_NAME}}-{{CORE}}
+    tag:
+    pullPolicy: IfNotPresent
+  javaOpts:
+  spi{{API_NAME}}{{CORE}}Config:
+  ssl:
+    enabled: false
+  jolokia:
+    enabled: true
+  resources: 
+    limits:
+      cpu: 
+      memory: 
+  probe:
+    enabled: true
+    path: /actuator/health
+    timeoutSeconds: 5
+    readiness:
+      initialDelaySeconds: 20
+      periodSeconds: 30
+    liveness:
+      initialDelaySeconds: 300
+      periodSeconds: 600  
+service:
+  name: fis-api-spi-{{API_NAME}}-{{CORE}}
+  internalPort: 8080
+  type:
+
+routes:
+  default:
+    enabled: true
+    subdomain: 
+    targetPort: 8080
+    tls:
+      termination: edge
+      insecureEdgeTerminationPolicy: Redirect
+
+  items:
+    default:
+      enabled: true
+      targetPort: 
+      subdomain:
+      qualifier:
+      host: 
+      tlsEnabled: true
+      tls:
+
+    external:
+      enabled: false
+      targetPort: 
+      subdomain: 
+      qualifier: external
+      host: 
+      tlsEnabled: true
+      tls:

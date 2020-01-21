@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.fis.api.apex.demo</groupId>
+    <artifactId>apex-api-impl-demo</artifactId>
+    <name>apex-api-impl-demo</name>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <description>Demo implementations of Apex application(s) for deployment and associated integration flows</description>
+    <properties>
+        <revision>1.0.0-SNAPSHOT</revision>
+        <apex.api.version>1.0-SNAPSHOT</apex.api.version>
+        <project.version>1.0-SNAPSHOT</project.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.fis.api.apex</groupId>
+                <artifactId>contracts</artifactId>
+                <version>${apex.api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fis.api.apex.demo</groupId>
+                <artifactId>api-apex-demo-server</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fis.api.apex.demo</groupId>
+                <artifactId>api-apex-demo-integrations</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fis.api.apex.demo</groupId>
+                <artifactId>api-apex-demo-specs</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>deployments</module>
+        <module>integrations</module>
+        <module>specs</module>
+    </modules>
+
+
+</project>

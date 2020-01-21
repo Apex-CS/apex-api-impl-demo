@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.service.name }}
+  {{- template "standard_labels" . }}
+  {{- template "standard_service_annotations" . }}
+spec:
+{{- template "standard_service_selector" . }}
+  type: {{ .Values.service.type | default "ClusterIP" }}
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+      name: 8080-tcp
+    {{- if .Values.deployment.ssl.enabled }}
+    # for the ssl traffic
+    - port: 8443
+      targetPort: 8443
+      protocol: TCP
+      name: 8443-tcp
+    {{- end -}}
+   
