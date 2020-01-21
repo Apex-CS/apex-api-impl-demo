@@ -1,5 +1,5 @@
 config:
-  file: embedded:{{API_NAME}}app-{{CORE}}:application.properties
+  file: embedded:apexapp-demo:application.properties
 
 # Logging (overrides)
 # note: we do not have our own logback-spring.properties out there - so just running off the spring defaults right now
@@ -11,9 +11,9 @@ logging:
     spring: DEBUG
     test: INFO
     web: DEBUG
-    com.fis.api.flows.{{API_NAME}}.{{profile}}: DEBUG
-    com.fis.api.flows.{{API_NAME}}.{{profile}}.flows: DEBUG
-    com.fis.api.flows.{{API_NAME}}.{{profile}}.flows.{{GATEWAY_PATH}}.{{GATEWAY_VERSION}}: DEBUG
+    com.fis.api.flows.apex.{{profile}}: DEBUG
+    com.fis.api.flows.apex.{{profile}}.flows: DEBUG
+    com.fis.api.flows.apex.{{profile}}.flows.{{GATEWAY_PATH}}.{{GATEWAY_VERSION}}: DEBUG
 
   orgcode:
     pattern: .*/v2/(.\\w*?)/.*
@@ -28,10 +28,10 @@ spring:
     enabled: false
 
 info:
-  description: epo.fisapi.{{CORE}}{{API_NAME}}Dsm integration program
+  description: epo.fisapi.demoapexDsm integration program
 
-# {{API_NAME}} specific settings
-{{API_NAME}}:
+# apex specific settings
+apex:
   integration:
     threadpool:
       minSize: 8
@@ -40,9 +40,9 @@ info:
 fis:
   api:
     consuming:
-      {{CORE}}:
+      demo:
         protocol: http
         {{GATEWAY_NAME}}:
           host: {{URI_TO_HOST_SERVER}}
           resource: /{{URI_TO_RESOURCE}}
-          url: ${fis.api.consuming.{{CORE}}.protocol}://${fis.api.consuming.{{CORE}}.{{GATEWAY_NAME}}.host}${fis.api.consuming.{{CORE}}.{{GATEWAY_NAME}}.resource}
+          url: ${fis.api.consuming.demo.protocol}://${fis.api.consuming.demo.{{GATEWAY_NAME}}.host}${fis.api.consuming.demo.{{GATEWAY_NAME}}.resource}

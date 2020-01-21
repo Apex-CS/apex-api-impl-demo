@@ -1,4 +1,4 @@
 apiVersion: v1
 description: A Helm chart for Kubernetes
-name: fis-api-spi-{{API_NAME}}-{{CORE}}
+name: fis-api-spi-apex-demo
 version:

@@ -16,8 +16,8 @@ import io.fis.*
 
 //////////////////////////////////////////////////////
 // These should be the only two lines needing changes between IMPLs
-def imageName = 'docker-epo-local.docker.fisdev.local/epo/fis/api/spi-{{API_NAME}}-{{CORE}}'
-def chartName = 'fis-api-spi-{{API_NAME}}-{{CORE}}'
+def imageName = 'docker-epo-local.docker.fisdev.local/epo/fis/api/spi-apex-demo'
+def chartName = 'fis-api-spi-apex-demo'
 
 //////////////////////////////////////////////////////
 def cloudId = 'epo-cicd'

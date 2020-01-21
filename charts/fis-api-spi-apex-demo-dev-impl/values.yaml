@@ -1,11 +1,11 @@
-fis-api-spi-{{API_NAME}}-{{CORE}}:
+fis-api-spi-apex-demo:
   deployment:
     replicaCount: 1
     image:
-      name: docker.fnis.com/epo/fis/api/spi-{{API_NAME}}-{{CORE}}
+      name: docker.fnis.com/epo/fis/api/spi-apex-demo
       tag: 
       pullPolicy: Always
-    spi{{API_NAME}}{{CORE}}Config: 'fis-api-spi-{{API_NAME}}-{{CORE}}-config'
+    spiapexdemoConfig: 'fis-api-spi-apex-demo-config'
     resources:
       limits:
         cpu: 500m

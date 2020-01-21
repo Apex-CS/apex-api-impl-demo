@@ -1,11 +1,11 @@
 deployment:
   replicaCount: 1
   image:
-    name: docker.fnis.com/epo/fis/api/spi-{{API_NAME}}-{{CORE}}
+    name: docker.fnis.com/epo/fis/api/spi-apex-demo
     tag:
     pullPolicy: IfNotPresent
   javaOpts:
-  spi{{API_NAME}}{{CORE}}Config:
+  spiapexdemoConfig:
   ssl:
     enabled: false
   jolokia:
@@ -25,7 +25,7 @@ deployment:
       initialDelaySeconds: 300
       periodSeconds: 600  
 service:
-  name: fis-api-spi-{{API_NAME}}-{{CORE}}
+  name: fis-api-spi-apex-demo
   internalPort: 8080
   type:
 

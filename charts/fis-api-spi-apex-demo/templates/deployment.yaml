@@ -10,7 +10,7 @@ spec:
       volumes:
         - name: spi-config
           configMap:
-            name: {{ .spi{{API_NAME}}{{CORE}}Config }}
+            name: {{ .spiapexdemoConfig }}
         {{- if .volumes }}
 {{ toYaml .volumes | indent 8 }}
         {{- end }}
