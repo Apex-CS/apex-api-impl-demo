@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/apex-api-impl-demo.iml" filepath="$PROJECT_DIR$/.idea/apex-api-impl-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/specs/contracts/contracts.iml" filepath="$PROJECT_DIR$/specs/contracts/contracts.iml" />
       <module fileurl="file://$PROJECT_DIR$/deployments/deployments.iml" filepath="$PROJECT_DIR$/deployments/deployments.iml" />
       <module fileurl="file://$PROJECT_DIR$/integrations/integrations.iml" filepath="$PROJECT_DIR$/integrations/integrations.iml" />
       <module fileurl="file://$PROJECT_DIR$/deployments/server/server.iml" filepath="$PROJECT_DIR$/deployments/server/server.iml" />

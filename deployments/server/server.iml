@@ -125,7 +125,7 @@
     <orderEntry type="library" scope="TEST" name="Maven: com.github.jknack:handlebars:4.1.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.github.jknack:handlebars-helpers:4.1.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: commons-fileupload:commons-fileupload:1.4" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: commons-io:commons-io:2.2" level="project" />
+    <orderEntry type="library" name="Maven: commons-io:commons-io:2.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty.http2:http2-server:9.4.24.v20191120" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty.http2:http2-common:9.4.24.v20191120" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty.http2:http2-hpack:9.4.24.v20191120" level="project" />
@@ -135,5 +135,13 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:jetty-alpn-conscrypt-client:9.4.24.v20191120" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:jetty-alpn-client:9.4.24.v20191120" level="project" />
     <orderEntry type="module" module-name="integrations" />
+    <orderEntry type="library" name="Maven: org.springframework.integration:spring-integration-http:5.2.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.integration:spring-integration-ws:5.2.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.ws:spring-ws-core:3.0.8.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-oxm:5.2.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.integration:spring-integration-xml:5.2.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.ws:spring-xml:3.0.8.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.integration:spring-integration-file:5.2.2.RELEASE" level="project" />
+    <orderEntry type="module" module-name="specs" />
   </component>
 </module>

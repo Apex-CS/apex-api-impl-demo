@@ -49,8 +49,7 @@
     <orderEntry type="library" name="Maven: org.springframework.integration:spring-integration-file:5.2.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.6" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-configuration-processor:2.2.2.RELEASE" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.immutables:value:unknown" level="project" />
-    <orderEntry type="library" name="Maven: com.fis.api.apex:contracts:1.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.immutables:value:2.8.3" level="project" />
     <orderEntry type="module" module-name="specs" />
   </component>
 </module>
