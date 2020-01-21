@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.immutables:value:unknown">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/immutables/value/unknown/value-unknown.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/immutables/value/unknown/value-unknown-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/immutables/value/unknown/value-unknown-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

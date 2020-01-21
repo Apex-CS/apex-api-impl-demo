@@ -1,0 +1,48 @@
+config:
+  file: embedded:{{API_NAME}}app-{{CORE}}:application.properties
+
+# Logging (overrides)
+# note: we do not have our own logback-spring.properties out there - so just running off the spring defaults right now
+logging:
+  level:
+    default: INFO
+    http: INFO
+    root: INFO
+    spring: DEBUG
+    test: INFO
+    web: DEBUG
+    com.fis.api.flows.{{API_NAME}}.{{profile}}: DEBUG
+    com.fis.api.flows.{{API_NAME}}.{{profile}}.flows: DEBUG
+    com.fis.api.flows.{{API_NAME}}.{{profile}}.flows.{{GATEWAY_PATH}}.{{GATEWAY_VERSION}}: DEBUG
+
+  orgcode:
+    pattern: .*/v2/(.\\w*?)/.*
+
+# spring boot configs - defines server port for embedded tomcat, for use in testing
+server:
+  port: 8080
+
+# spring.mvc.servlet.path is the path added to the server.servlet.context-path for all servlets
+spring:
+  jmx:
+    enabled: false
+
+info:
+  description: epo.fisapi.{{CORE}}{{API_NAME}}Dsm integration program
+
+# {{API_NAME}} specific settings
+{{API_NAME}}:
+  integration:
+    threadpool:
+      minSize: 8
+      maxSize: 48
+
+fis:
+  api:
+    consuming:
+      {{CORE}}:
+        protocol: http
+        {{GATEWAY_NAME}}:
+          host: {{URI_TO_HOST_SERVER}}
+          resource: /{{URI_TO_RESOURCE}}
+          url: ${fis.api.consuming.{{CORE}}.protocol}://${fis.api.consuming.{{CORE}}.{{GATEWAY_NAME}}.host}${fis.api.consuming.{{CORE}}.{{GATEWAY_NAME}}.resource}

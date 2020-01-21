@@ -11,6 +11,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>api-apex-demo-deployments</artifactId>
+    <packaging>pom</packaging>
+    <name>api-apex-demo-deployments</name>
+    <description>holds multiple deployable applications that support the Apex api demo implementation in some way</description>
 
+    <modules>
+        <module>server</module>
+    </modules>
 
 </project>

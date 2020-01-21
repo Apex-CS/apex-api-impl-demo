@@ -6,10 +6,21 @@
         <artifactId>apex-api-impl-demo</artifactId>
         <groupId>com.fis.api.apex.demo</groupId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>specs</artifactId>
+    <artifactId>api-apex-demo-specs</artifactId>
+    <name>api-apex-demo-specs</name>
+    <description>contains xslts used by the integration; along with schema, mapforce files, etc that contributes to creation of xslts</description>
 
+    <!-- this just zips up ALL the files into a jar -->
+    <build>
+        <resources>
+            <resource>
+                <directory>${project.basedir}</directory>
+            </resource>
+        </resources>
+    </build>
 
 </project>
