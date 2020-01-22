@@ -22,27 +22,44 @@ The APEX API IMPL DEMO covers the implementation of the APEX API with the DEMO c
 
 `fis-api-spi-apex-demo-dev-impl`
 
-#Questions
+# Questions
 
-##Charts
-- Is expected to have a local o cloud kubernetes environment or we can run as local spring boot?
-- If cloud need can we have a helm example file?
-##Deployments
+## Charts
+- Is expected to have a local or cloud kubernetes environment or can we run as local spring boot?
+- can we have a helm example file?
+## Deployments
 - Could you please define the deployment process?
-##Integrations
-- There's a lot of proprietary classes needed for Integration Flow, Can we assume them as mock classes or they will be provided with a repo access?
+- Are we going to be able to connect to your CI/CD or are we going to have our own  CI/CD?
+
+## Integrations
+- There's a lot of proprietary classes needed for Integration Flow, Can we assume them as mock classes or will they be provided with a repo access?
 - More information about Endpoint Configurer, FIsDynamicHostDestinationProvider and Error Channel needed.
 - Can you describe the test process for spring integration with the project?
-
-##Other
-- The Webservices will be REST or Soap?
-- Is still using SOAP services as legacy API?
-- Sequence Diagram or other type of are expected for the documentation?
-- Where is the starting point for call Product service ( From Mobile App, web portal, another WS )
+- Could we assume all data as mock, or are you going to provide access or dummy data?
+## Other
+- Can we assume the service as REST?
+- Are diagrams expected for documentation?
+- For documentation purposes, where is the starting point for call Product service ( From Mobile App, web portal, another WS )
 - https://github.com/instrumenta/openapi2jsonschema is the correct URL for tool?
-- jsd2xsd tool, where could we download?
-- Do you are using OpenShift?
+- jsd2xsd tool, where could we download? https://github.com/ethlo/jsons2xsd ? 
+- Are you using OpenShift as cloud provider?
 
+
+
+## Product API estimate
+#### Best case scenario
+
+| Activity                    	|  Time 	|
+|-----------------------------	|:-----:	|
+| Read Requirements           	| 8 hrs 	|
+| InputContract - swagger     	| 4 hrs 	|
+| Integration/Detailed Spec   	| 8 hrs 	|
+| Schemas generate            	| 2 hrs 	|
+| Mapping                     	| 4 hrs 	|
+| IntegrationFlow Source code 	| 8 hrs 	|
+| Test                        	| 8 hrs 	|
+| Deployment                  	| 8 hrs 	|
+| <b>Total                  	| <b>50 hrs 	|
 
 
 
