@@ -25,19 +25,23 @@ The APEX API IMPL DEMO covers the implementation of the APEX API with the DEMO c
 #Questions
 
 ##Charts
-Is expected to have a local o cloud kubernetes environment or we can run as local spring boot?
-If cloud need can we have a helm example file?
+- Is expected to have a local o cloud kubernetes environment or we can run as local spring boot?
+- If cloud need can we have a helm example file?
 ##Deployments
-Could you please define the deployment process?
+- Could you please define the deployment process?
 ##Integrations
-There's a lot of proprietary classes needed for Integration Flow, Can we assume them as mock classes or they will be provided with a repo access?
-More information about Endpoint Configurer, FIsDynamicHostDestinationProvider and Error Channel needed.
-Can you describe the test process for spring integration with the project?
+- There's a lot of proprietary classes needed for Integration Flow, Can we assume them as mock classes or they will be provided with a repo access?
+- More information about Endpoint Configurer, FIsDynamicHostDestinationProvider and Error Channel needed.
+- Can you describe the test process for spring integration with the project?
 
 ##Other
-The Webservices will be REST or Soap?
-Is still using SOAP services as legacy API?
-Sequence Diagram or other type of are expected for the documentation?
+- The Webservices will be REST or Soap?
+- Is still using SOAP services as legacy API?
+- Sequence Diagram or other type of are expected for the documentation?
+- Where is the starting point for call Product service ( From Mobile App, web portal, another WS )
+- https://github.com/instrumenta/openapi2jsonschema is the correct URL for tool?
+- jsd2xsd tool, where could we download?
+- Do you are using OpenShift?
 
 
 
