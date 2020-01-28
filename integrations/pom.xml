@@ -54,6 +54,11 @@
             <groupId>com.fis.api.apex.demo</groupId>
             <artifactId>api-apex-demo-specs</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.integration</groupId>
+            <artifactId>spring-integration-core</artifactId>
+            <version>5.2.2.RELEASE</version>
+        </dependency>
 
         <!-- note that the contracts come from a different repo/group than this project -->
         <!--

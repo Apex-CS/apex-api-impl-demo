@@ -464,3 +464,6 @@ $RECYCLE.BIN/
 # End of https://www.gitignore.io/api/node,java,linux,macos,maven,windows,eclipse,java-web,sublimetext,jetbrains+all,visualstudiocode
 /libraries/
 /libraries/
+
+# Default ignored files
+/workspace.xml
