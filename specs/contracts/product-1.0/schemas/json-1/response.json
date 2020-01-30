@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "attributes": {
+      "type": "array",
+      "items": {
+        "$ref": "_definitions.json#/definitions/Attributes"
+      }
+    },
+    "productBasics": {
+      "$ref": "_definitions.json#/definitions/ProductBasics"
+    },
+    "deliveryChannel": {
+      "$ref": "_definitions.json#/definitions/DeliveryChannel"
+    },
+    "portfolio": {
+      "$ref": "_definitions.json#/definitions/Portfolio"
+    }
+  },
+  "$schema": "http://json-schema.org/schema#"
+}
