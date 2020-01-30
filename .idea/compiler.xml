@@ -13,11 +13,11 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="apex-api-impl-demo" target="1.8" />
-      <module name="contracts" target="1.5" />
-      <module name="deployments" target="1.5" />
+      <module name="contracts" target="1.8" />
+      <module name="deployments" target="1.8" />
       <module name="integrations" target="1.8" />
-      <module name="server" target="1.5" />
-      <module name="specs" target="1.5" />
+      <module name="server" target="1.8" />
+      <module name="specs" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

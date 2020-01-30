@@ -45,6 +45,7 @@
                 <artifactId>api-apex-demo-specs</artifactId>
                 <version>${project.version}</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 

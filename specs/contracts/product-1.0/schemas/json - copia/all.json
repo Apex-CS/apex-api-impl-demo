@@ -1,0 +1,19 @@
+{
+  "oneOf": [
+    {
+      "$ref": "_definitions.json#/definitions/Response"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/Attributes"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/Portfolio"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/DeliveryChannel"
+    },
+    {
+      "$ref": "_definitions.json#/definitions/ProductBasics"
+    }
+  ]
+}

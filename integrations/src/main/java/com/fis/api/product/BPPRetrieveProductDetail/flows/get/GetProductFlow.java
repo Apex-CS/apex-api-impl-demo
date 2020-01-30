@@ -57,8 +57,8 @@ public class GetProductFlow extends IntegrationFlowAdapter {
 
     @Override
     protected IntegrationFlowDefinition<?> buildFlow() {
-        MessagingGatewaySupport inboundGateway =
-                customersApi.getCustomerAccounts();
+        MessagingGatewaySupport inboundGateway = null;
+                // customersApi.getCustomerAccounts();
         inboundGateway.setErrorChannel(errorChannel);
 
         inboundGateway.setReplyTimeout(RelationshipIntegrationConstants.DEFAULT_REPLY_TIMEOUT);
