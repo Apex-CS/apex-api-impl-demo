@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Response">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="attributes">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="code" type="xs:string"/>
+							<xs:element name="name" type="xs:string"/>
+							<xs:element name="type" type="xs:string"/>
+							<xs:element name="size" type="xs:string"/>
+							<xs:element name="value" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="productBasics">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="productId" type="xs:string"/>
+							<xs:element name="externalProductId" type="xs:string"/>
+							<xs:element name="name" type="xs:string"/>
+							<xs:element name="type" type="xs:string"/>
+							<xs:element name="applicationCode" type="xs:string"/>
+							<xs:element name="accountCategoryCode" type="xs:string"/>
+							<xs:element name="accountSubCategoryCode" type="xs:string"/>
+							<xs:element name="templateName" type="xs:string"/>
+							<xs:element name="responsibleOrgId" type="xs:string"/>
+							<xs:element name="offerIndicator" type="xs:string"/>
+							<xs:element name="formsIndicator" type="xs:string"/>
+							<xs:element name="subClassCode" type="xs:string"/>
+							<xs:element name="effectiveDate" type="xs:string"/>
+							<xs:element name="expirationDate" type="xs:string"/>
+							<xs:element name="createdDateTime" type="xs:dateTime"/>
+							<xs:element name="createdBy" type="xs:string"/>
+							<xs:element name="lastModifiedDateTime" type="xs:dateTime"/>
+							<xs:element name="lastModifiedBy" type="xs:string"/>
+							<xs:element name="portfolioGroup" type="xs:string"/>
+							<xs:element name="portfolioLine" type="xs:string"/>
+							<xs:element name="attributes" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="deliveryChannel">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="channelCode" type="xs:string"/>
+							<xs:element name="channelName" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="portfolio">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="portfolioId" type="xs:string"/>
+							<xs:element name="portfolioDescription" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

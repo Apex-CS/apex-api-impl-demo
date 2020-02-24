@@ -1,9 +1,6 @@
 package com.fis.api.product.BPPRetrieveProductDetail.flows.get;
 
-import com.fis.api.product.BPPRetrieveProductDetail.FisDynamicHostDestinationProvider;
-import com.fis.api.product.BPPRetrieveProductDetail.FiservDnaResponseVerifier;
-import com.fis.api.product.BPPRetrieveProductDetail.MessageOnlyErrorFlow;
-import com.fis.api.product.BPPRetrieveProductDetail.RelationshipIntegrationConstants;
+import com.fis.api.product.BPPRetrieveProductDetail.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -22,11 +19,11 @@ import static com.fis.api.product.BPPRetrieveProductDetail.flows.ProductFlow.sta
 public class GetProductFlow extends IntegrationFlowAdapter {
 
     //Xslts
-    @Value("${:classpath:/mapping/custtoacct-rel-1.0/get/xslt/"
-            + "GetCustToAcctRel_v1.0_to_AccountListRequest_7704.xslt}")
+    @Value("${:classpath:/mapping/product-1.0/getProduct/xslt/"
+            + "GetProductRequest.xslt}")
     private Resource requestXslt;
-    @Value("${:classpath:/mapping/custtoacct-rel-1.0/get/xslt/"
-            + "GetCustToAcctRel_v1.0_From_AccountListResponse_7704.xslt}")
+    @Value("${:classpath:/mapping/product-1.0/getProduct/xslt/"
+            + "GetProductResponse.xslt}")
     private Resource responseXslt;
 
     //Autowired Properties
@@ -36,9 +33,11 @@ public class GetProductFlow extends IntegrationFlowAdapter {
     @Qualifier(MessageOnlyErrorFlow.ERROR_CHANNEL_BEAN_NAME)
     private MessageChannel errorChannel;
     @Autowired
-
     @Qualifier(RelationshipIntegrationConstants.RELATIONSHIP_HOST_DESTINATION_PROVIDER)
     private FisDynamicHostDestinationProvider fisDynamicHostProvider;
+
+    @Autowired
+    ProductAPI productAPI;
 
     private String classMethodName = getClass().getName();
 
@@ -57,8 +56,7 @@ public class GetProductFlow extends IntegrationFlowAdapter {
 
     @Override
     protected IntegrationFlowDefinition<?> buildFlow() {
-        MessagingGatewaySupport inboundGateway = null;
-                // customersApi.getCustomerAccounts();
+        MessagingGatewaySupport inboundGateway = productAPI.getProductById();
         inboundGateway.setErrorChannel(errorChannel);
 
         inboundGateway.setReplyTimeout(RelationshipIntegrationConstants.DEFAULT_REPLY_TIMEOUT);

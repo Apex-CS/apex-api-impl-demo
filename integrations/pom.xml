@@ -59,11 +59,40 @@
             <artifactId>spring-integration-core</artifactId>
             <version>5.2.2.RELEASE</version>
         </dependency>
-
         <dependency>
             <groupId>com.ethlo.jsons2xsd</groupId>
             <artifactId>jsons2xsd</artifactId>
             <version>2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <scope>test</scope>
         </dependency>
 
         <!-- note that the contracts come from a different repo/group than this project -->
@@ -74,5 +103,17 @@
         </dependency>-->
 
     </dependencies>
+    <build>
+        <finalName>maven-unit-test</finalName>
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.0</version>
+            </plugin>
+
+        </plugins>
+    </build>
 
 </project>

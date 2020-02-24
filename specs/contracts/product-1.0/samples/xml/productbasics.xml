@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<productBasics>
+    <productId>string</productId>
+    <externalProductId>string</externalProductId>
+    <name>string</name>
+    <type>string</type>
+    <applicationCode>string</applicationCode>
+    <accountCategoryCode>string</accountCategoryCode>
+    <accountSubCategoryCode>string</accountSubCategoryCode>
+    <templateName>string</templateName>
+    <responsibleOrgId>string</responsibleOrgId>
+    <offerIndicator>string</offerIndicator>
+    <formsIndicator>string</formsIndicator>
+    <subClassCode>string</subClassCode>
+    <effectiveDate>string</effectiveDate>
+    <expirationDate>string</expirationDate>
+    <createdDateTime>2020-02-12T19:11:33.358Z</createdDateTime>
+    <createdBy>string</createdBy>
+    <lastModifiedDateTime>2020-02-12T19:11:33.358Z</lastModifiedDateTime>
+    <lastModifiedBy>string</lastModifiedBy>
+    <portfolioGroup>string</portfolioGroup>
+    <portfolioLine>string</portfolioLine>
+    <attributes>string</attributes>
+</productBasics>

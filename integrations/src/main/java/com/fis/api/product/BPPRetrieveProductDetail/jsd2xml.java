@@ -57,7 +57,7 @@ public class jsd2xml {
 
     public static String getXSDFileName(Path path){
         String fileName = path.toFile().getName();
-        return fileName.replace(".json", ".xml");
+        return fileName.replace(".json", ".xsd");
     }
 
     public static void saveXML(String fileName, String content) throws IOException {

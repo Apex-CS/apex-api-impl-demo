@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns:x="http://example.com/myschema.xsd" elementFormDefault="qualified" targetNamespace="http://example.com/myschema.xsd" xmlns="http://www.w3.org/2001/XMLSchema">
+  <complexType name="object">
+    <sequence>
+      <element minOccurs="0" name="attributes">
+        <complexType name="attributes">
+          <sequence>
+            <element minOccurs="0" name="code" type="string"/>
+            <element minOccurs="0" name="name" type="string"/>
+            <element minOccurs="0" name="type" type="string"/>
+            <element minOccurs="0" name="size" type="string"/>
+            <element minOccurs="0" name="value" type="string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element minOccurs="0" name="productBasics">
+        <complexType name="productBasics">
+          <sequence>
+            <element minOccurs="0" name="productId" type="string"/>
+            <element minOccurs="0" name="externalProductId" type="string"/>
+            <element minOccurs="0" name="name" type="string"/>
+            <element minOccurs="0" name="type" type="string"/>
+            <element minOccurs="0" name="applicationCode" type="string"/>
+            <element minOccurs="0" name="accountCategoryCode" type="string"/>
+            <element minOccurs="0" name="accountSubCategoryCode" type="string"/>
+            <element minOccurs="0" name="templateName" type="string"/>
+            <element minOccurs="0" name="responsibleOrgId" type="string"/>
+            <element minOccurs="0" name="offerIndicator" type="string"/>
+            <element minOccurs="0" name="formsIndicator" type="string"/>
+            <element minOccurs="0" name="subClassCode" type="string"/>
+            <element minOccurs="0" name="effectiveDate" type="string"/>
+            <element minOccurs="0" name="expirationDate" type="string"/>
+            <element minOccurs="0" name="createdDateTime" type="dateTime"/>
+            <element minOccurs="0" name="createdBy" type="string"/>
+            <element minOccurs="0" name="lastModifiedDateTime" type="dateTime"/>
+            <element minOccurs="0" name="lastModifiedBy" type="string"/>
+            <element minOccurs="0" name="portfolioGroup" type="string"/>
+            <element minOccurs="0" name="portfolioLine" type="string"/>
+            <element minOccurs="0" name="attributes" type="string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element minOccurs="0" name="deliveryChannel">
+        <complexType name="deliveryChannel">
+          <sequence>
+            <element minOccurs="0" name="channelCode" type="string"/>
+            <element minOccurs="0" name="channelName" type="string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element minOccurs="0" name="portfolio">
+        <complexType name="portfolio">
+          <sequence>
+            <element minOccurs="0" name="portfolioId" type="string"/>
+            <element minOccurs="0" name="portfolioDescription" type="string"/>
+          </sequence>
+        </complexType>
+      </element>
+    </sequence>
+  </complexType>
+</schema>

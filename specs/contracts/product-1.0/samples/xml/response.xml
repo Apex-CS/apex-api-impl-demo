@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+    <attributes>
+        <code>string</code>
+        <name>string</name>
+        <type>string</type>
+        <size>string</size>
+        <value>string</value>
+    </attributes>
+    <productBasics>
+        <productId>string</productId>
+        <externalProductId>string</externalProductId>
+        <name>string</name>
+        <type>string</type>
+        <applicationCode>string</applicationCode>
+        <accountCategoryCode>string</accountCategoryCode>
+        <accountSubCategoryCode>string</accountSubCategoryCode>
+        <templateName>string</templateName>
+        <responsibleOrgId>string</responsibleOrgId>
+        <offerIndicator>string</offerIndicator>
+        <formsIndicator>string</formsIndicator>
+        <subClassCode>string</subClassCode>
+        <effectiveDate>string</effectiveDate>
+        <expirationDate>string</expirationDate>
+        <createdDateTime>2020-01-30T22:54:27.125Z</createdDateTime>
+        <createdBy>string</createdBy>
+        <lastModifiedDateTime>2020-01-30T22:54:27.125Z</lastModifiedDateTime>
+        <lastModifiedBy>string</lastModifiedBy>
+        <portfolioGroup>string</portfolioGroup>
+        <portfolioLine>string</portfolioLine>
+        <attributes>string</attributes>
+    </productBasics>
+    <deliveryChannel>
+        <channelCode>string</channelCode>
+        <channelName>string</channelName>
+    </deliveryChannel>
+    <portfolio>
+        <portfolioId>string</portfolioId>
+        <portfolioDescription>string</portfolioDescription>
+    </portfolio>
+</Response>

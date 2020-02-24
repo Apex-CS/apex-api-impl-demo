@@ -1,0 +1,14 @@
+com\fis\api\product\BPPRetrieveProductDetail\gateways\v1\get\ProductGateway.class
+com\fis\api\product\BPPRetrieveProductDetail\jsd2xml.class
+com\fis\api\product\BPPRetrieveProductDetail\RelationshipIntegrationConstants.class
+com\fis\api\product\BPPRetrieveProductDetail\FisDynamicHostDestinationProvider.class
+com\fis\api\product\BPPRetrieveProductDetail\flows\ProductFlow.class
+com\fis\api\product\BPPRetrieveProductDetail\flows\create\ProductFlow.class
+com\fis\api\product\BPPRetrieveProductDetail\gateways\v1\ProductGateway.class
+com\fis\api\product\BPPRetrieveProductDetail\flows\get\GetProductFlow.class
+com\fis\api\product\BPPRetrieveProductDetail\ProductIntegrationConstants.class
+com\fis\api\product\BPPRetrieveProductDetail\MessageOnlyErrorFlow.class
+com\fis\api\product\BPPRetrieveProductDetail\gateways\v1\create\ProductGateway.class
+com\fis\api\product\BPPRetrieveProductDetail\ProductAPI.class
+com\fis\api\product\BPPRetrieveProductDetail\FiservDnaResponseVerifier.class
+com\fis\api\product\BPPRetrieveProductDetail\ProductAPI$1.class

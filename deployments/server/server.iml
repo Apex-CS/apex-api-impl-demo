@@ -142,7 +142,7 @@
     <orderEntry type="library" name="Maven: org.springframework.integration:spring-integration-xml:5.2.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.ws:spring-xml:3.0.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.integration:spring-integration-file:5.2.2.RELEASE" level="project" />
-    <orderEntry type="module" module-name="specs" />
+    <orderEntry type="library" name="Maven: com.fis.api.apex.demo:api-apex-demo-specs:1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.ethlo.jsons2xsd:jsons2xsd:2.0" level="project" />
     <orderEntry type="library" name="Maven: com.sun.xsom:xsom:20140925" level="project" />
     <orderEntry type="library" name="Maven: relaxngDatatype:relaxngDatatype:20020414" level="project" />
