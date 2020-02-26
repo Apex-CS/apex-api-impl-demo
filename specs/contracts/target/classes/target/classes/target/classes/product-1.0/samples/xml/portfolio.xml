@@ -1,0 +1,4 @@
+<portfolio>
+    <portfolioId>string</portfolioId>
+    <portfolioDescription>string</portfolioDescription>
+</portfolio>

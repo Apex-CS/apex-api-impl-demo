@@ -1,0 +1,189 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "API Product",
+    "version" : "1.0.0",
+    "title" : "API Products",
+    "contact" : {
+      "email" : "avaldez@apexsystems.com"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host" : "virtserver.swaggerhub.com",
+  "basePath" : "/Intersys7/Product/1.0.0",
+  "tags" : [ {
+    "name" : "developers",
+    "description" : "Operations available to regular developers"
+  } ],
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/products/{product-id}" : {
+      "get" : {
+        "tags" : [ "developers" ],
+        "summary" : "product",
+        "description" : "Product Id path\n",
+        "operationId" : "products",
+        "produces" : [ "application/xml", "application/json" ],
+        "parameters" : [ {
+          "name" : "product-id",
+          "in" : "path",
+          "description" : "ID of product to return",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Response"
+            }
+          },
+          "400" : {
+            "description" : "Invalid ID supplied"
+          },
+          "404" : {
+            "description" : "Product not found"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Response" : {
+      "type" : "object",
+      "properties" : {
+        "attributes" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Attributes"
+          }
+        },
+        "productBasics" : {
+          "$ref" : "#/definitions/ProductBasics"
+        },
+        "deliveryChannel" : {
+          "$ref" : "#/definitions/DeliveryChannel"
+        },
+        "portfolio" : {
+          "$ref" : "#/definitions/Portfolio"
+        }
+      }
+    },
+    "Attributes" : {
+      "type" : "object",
+      "properties" : {
+        "code" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "size" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Portfolio" : {
+      "type" : "object",
+      "properties" : {
+        "portfolioId" : {
+          "type" : "string"
+        },
+        "portfolioDescription" : {
+          "type" : "string"
+        }
+      }
+    },
+    "DeliveryChannel" : {
+      "type" : "object",
+      "properties" : {
+        "channelCode" : {
+          "type" : "string"
+        },
+        "channelName" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ProductBasics" : {
+      "type" : "object",
+      "properties" : {
+        "productId" : {
+          "type" : "string"
+        },
+        "externalProductId" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "applicationCode" : {
+          "type" : "string"
+        },
+        "accountCategoryCode" : {
+          "type" : "string"
+        },
+        "accountSubCategoryCode" : {
+          "type" : "string"
+        },
+        "templateName" : {
+          "type" : "string"
+        },
+        "responsibleOrgId" : {
+          "type" : "string"
+        },
+        "offerIndicator" : {
+          "type" : "string"
+        },
+        "formsIndicator" : {
+          "type" : "string"
+        },
+        "subClassCode" : {
+          "type" : "string"
+        },
+        "effectiveDate" : {
+          "type" : "string"
+        },
+        "expirationDate" : {
+          "type" : "string"
+        },
+        "createdDateTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "createdBy" : {
+          "type" : "string"
+        },
+        "lastModifiedDateTime" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "lastModifiedBy" : {
+          "type" : "string"
+        },
+        "portfolioGroup" : {
+          "type" : "string"
+        },
+        "portfolioLine" : {
+          "type" : "string"
+        },
+        "attributes" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+<deliveryChannel>
+    <channelCode>string</channelCode>
+    <channelName>string</channelName>
+</deliveryChannel>

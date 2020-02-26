@@ -6,7 +6,11 @@ import org.springframework.core.io.Resource;
 import org.springframework.integration.channel.DirectChannel;
 import org.springframework.messaging.MessageChannel;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ProductFlow {
+
 
     public static MessageChannel standardGateway (Resource request,
                                            Resource response,
@@ -14,6 +18,7 @@ public class ProductFlow {
                                            FiservDnaResponseVerifier fiservDnaResponseVerifier,
                                            String[] param,
                                            String classMethodName){
+
 
         return new DirectChannel();
     }
