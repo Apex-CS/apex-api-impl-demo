@@ -27,8 +27,29 @@ public class GetProductFlowTest {
 
     @Test
     public void integrationTest(){
+        getProductGateway.sendMessage("15");
+        getProductFlow.buildFlow();
+        Assert.notNull(getProductFlow.getErrorMessage(), "Error must not occurs here");
+    }
+
+    @Test
+    public void integrationSysErrorTest(){
         getProductGateway.sendMessage("105");
         getProductFlow.buildFlow();
+        System.out.println(getProductFlow.getErrorMessage().toString());
+        Assert.isTrue(
+                getProductFlow.getErrorMessage().getPayload().getMessage()
+                        .contains("PRODAPI-SYS-0001"), "Error must exist here");
     }
+
+    @Test
+    public void integrationBadArgsErrorTest(){
+        getProductGateway.sendMessage("AAAA");
+        getProductFlow.buildFlow();
+        Assert.isTrue(
+                getProductFlow.getErrorMessage().getPayload().getMessage()
+                        .contains("PRODAPI-VAL-0019"), "Error must exist here");
+    }
+
 
 }

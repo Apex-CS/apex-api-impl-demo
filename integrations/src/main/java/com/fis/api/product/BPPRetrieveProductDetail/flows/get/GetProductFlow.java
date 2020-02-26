@@ -16,6 +16,7 @@ import org.springframework.integration.gateway.MessagingGatewaySupport;
 import org.springframework.integration.handler.MessageProcessor;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageChannel;
+import org.springframework.messaging.support.ErrorMessage;
 import org.springframework.messaging.support.GenericMessage;
 import org.springframework.stereotype.Component;
 
@@ -36,12 +37,14 @@ public class GetProductFlow extends IntegrationFlowAdapter implements MessagePro
     @Value("${:classpath:/mapping/product-1.0/getProduct/xslt/"
             + "GetProductResponse.xslt}")
     private Resource responseXslt;
+    private ErrorMessage errorMessage;
 
     //Autowired Properties
     @Autowired
     private FiservDnaResponseVerifier fiservDnaResponseVerifier;
 
     private MessageChannel outputChannel;
+    @Autowired
     private MessageChannel errorChannel;
 
     @Autowired
@@ -50,7 +53,7 @@ public class GetProductFlow extends IntegrationFlowAdapter implements MessagePro
     @Autowired
     private ProductAPI productAPI;
 
-    private int productId;
+    private String productId;
     private String classMethodName = getClass().getName();
 
     //endpointConfigurer
@@ -70,6 +73,7 @@ public class GetProductFlow extends IntegrationFlowAdapter implements MessagePro
     protected IntegrationFlowDefinition<?> buildFlow() {
 
         MessagingGatewaySupport inboundGateway = productAPI.getProductById( productId );
+        errorMessage = productAPI.getErrorMessage();
         errorChannel = inboundGateway.getErrorChannel();
         outputChannel = inboundGateway.getReplyChannel();
 
@@ -108,8 +112,16 @@ public class GetProductFlow extends IntegrationFlowAdapter implements MessagePro
 
     @ServiceActivator(inputChannel = PRODUCT_GATEWAY_CHANNEL)
     public Object processMessage(Message message) {
-        this.productId = Integer.parseInt(message.getPayload().toString());
-        logger.info(" ProductId : "+ this.productId);
+        this.productId = message.getPayload().toString();
+        logger.info(" ProductId : " + this.productId);
         return message;
+    }
+
+    public ErrorMessage getErrorMessage() {
+        return errorMessage;
+    }
+
+    public void setErrorMessage(ErrorMessage errorMessage) {
+        this.errorMessage = errorMessage;
     }
 }
