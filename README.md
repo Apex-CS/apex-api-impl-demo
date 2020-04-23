@@ -4,7 +4,13 @@
 
 ## Description
 
-The APEX API IMPL DEMO covers the implementation of a set of simple RESTful APIs using Spring Integration.
+The APEX API IMPL DEMO covers the implementation of a set of Flows using Spring Integration as the business logic orchestrator.
+With the intention to expose these flows through a small set of Microservices endpoints using SpringBoot.
+This repository portrays a structure for the Spring Integration Flow and various mapping stages, using different mapping tools like Mapforce and xsltToJson that also work as documentation.
+
+### Project Main Gateway
+
+getProductGateway
 
 ### Manual correction in response EAVEventList_v1_0_SearchEventRes.xslt :
 
